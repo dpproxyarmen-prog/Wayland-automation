@@ -43,7 +43,7 @@ class Mouse:
 
     def get_socket_path(self):
         wayland_display = os.getenv("WAYLAND_DISPLAY", "wayland-0")
-        return f"/run/user/{os.getuid()}/{wayland_display}"
+        return f"{wayland_display}"
 
     def connect_to_wayland(self):
         sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
